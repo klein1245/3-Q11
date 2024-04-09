@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 1 Javascript Objects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url(a.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 0 auto; 
+      max-width: 800px; 
+    }
+
+    .person {
+      border: 1px solid #ccc; 
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #fff; 
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+      text-align: center;
+      font-size: 16px;
+      width: 300px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .person h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .person p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Exercise 1 Javascript Objects</h2>
+
+  <div id="people"></div>
+
+  <script>
+    // Arrange objects by lastname alphabetically
+    const people = [
+      { firstname: "Klein", lastname: "Florenciano", age: 16, eyeColor: "Brown" },
+      { firstname: "Euricoe", lastname: "Tolentino", age: 16, eyeColor: "Brown" },
+      { firstname: "Paul Justin C.", lastname: "Canotal", age: 16, eyeColor: "Brown" },
+      { firstname: "Mark Ezekiel", lastname: "Dumaguit", age: 16, eyeColor: "Brown" },
+      { firstname: "Venedict Floyd", lastname: "Quimay", age: 16, eyeColor: "Brown" },
+      { firstname: "Sofia Lorraine", lastname: "Giega", age: 16, eyeColor: "Brown" }
+    ];
+
+    const peopleList = document.getElementById("people");
+
+    for (const person of people) {
+      const personElement = document.createElement("div");
+      personElement.classList.add("person");
+
+      personElement.innerHTML = `
+        <h3>${person.firstname} ${person.lastname}</h3>
+        <p>Age: ${person.age}</p>
+        <p>Eye Color: ${person.eyeColor}</p>
+      `;
+
+      peopleList.appendChild(personElement);
+    }
+  </script>
+</body>
+
+</html>

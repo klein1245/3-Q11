@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odd/Even Checker & Sum Calculator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url(a.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+        }
+        .container{
+            background-color: #ececec;
+            margin: auto;
+            border: solid black 2px;
+            display: block;
+            width: 200px;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 22px;
+            box-shadow: black 2px 2px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 35px;
+        }
+    </style>
+    <script>
+        function checkOddEvenAndSum() {
+            var inputNumber = parseInt(document.getElementById('numberInput').value);
+            var resultDiv = document.getElementById('result');
+            var sum = 0;
+
+            if (isNaN(inputNumber)) {
+                resultDiv.innerHTML = "Please enter a valid integer.";
+                return;
+            }
+
+            var isEven = inputNumber % 2 === 0;
+
+            if (isEven) {
+                resultDiv.innerHTML = inputNumber + " is even.";
+            } else {
+                resultDiv.innerHTML = inputNumber + " is odd.";
+            }
+
+            // Calculate sum of numbers from 1 to inputNumber
+            for (var i = 1; i <= inputNumber; i++) {
+                sum += i;
+            }
+
+            resultDiv.innerHTML += "<br>Sum of numbers from 1 to " + inputNumber + " is " + sum + ".";
+        }
+    </script>
+</head>
+</head>
+
+<body>
+    <h1>Performance Task 2: Odd/Even Checker & Sum Calculator</h1>
+  <div class="container">
+    <label for="numberInput">Enter an Number Below:</label>
+    <input type="text" id="numberInput">
+    <button onclick="checkOddEvenAndSum()">Check</button><br>
+    <div id="result"></div>
+ </div>  
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Computation</title>
+  <style>
+    /* Body styles */
+    body {
+      background-image: url(a.avif); /* Replace with your background image URL */
+      background-size: cover;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif; /* Add font family */
+      margin: 0; /* Remove default margin */
+    }
+
+    /* Form container styles */
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    }
+
+    /* Heading styles */
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Input styles */
+    input {
+      margin-bottom: 10px;
+      width: 100%;
+      padding: 5px;
+      text-align: center;
+      border: 1px solid #ccc; /* Add border */
+    }
+
+    /* Button styles */
+    button {
+      padding: 5px 15px;
+      background-color: #7a8fa7;
+      color: rgb(11, 10, 10);
+      border: none;
+      cursor: pointer;
+      margin-top: 10px; /* Add margin top */
+    }
+  </style>
+</head>
+<body>
+  <h1>Grading Calculator</h1>
+  <form id="gradeForm">
+    <input type="text" id="studentNumber" placeholder="Student Number">
+    <input type="text" id="studentName" placeholder="Student Name">
+    <input type="number" id="quiz" placeholder="Quiz Score">
+    <input type="number" id="recitation" placeholder="Recitation Score">
+    <input type="number" id="longTest" placeholder="Long Test Score">
+    <input type="number" id="project" placeholder="Project Score">
+    <input type="number" id="attendance" placeholder="Attendance Score">
+    <input type="number" id="exam" placeholder="Exam Score">
+    <button type="button" onclick="calculateGrade()">Calculate Total Grade</button>
+  </form>
+
+  <p id="totalGrade"></p>
+
+  <script>
+    // Internal JavaScript
+    function calculateGrade() {
+      var quiz = parseFloat(document.getElementById('quiz').value) || 0;
+      var recitation = parseFloat(document.getElementById('recitation').value) || 0;
+      var longTest = parseFloat(document.getElementById('longTest').value) || 0;
+      var project = parseFloat(document.getElementById('project').value) || 0;
+      var attendance = parseFloat(document.getElementById('attendance').value) || 0;
+      var exam = parseFloat(document.getElementById('exam').value) || 0;
+    
+      var totalGrade = (quiz + recitation + longTest + project + attendance + exam) / 6;
+      
+      document.getElementById('totalGrade').innerText = 'Total Grade: ' + totalGrade;
+    }
+    </script>
+</body>
+</html>

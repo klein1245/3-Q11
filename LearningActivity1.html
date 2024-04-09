@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My First JavaScript Program</title>
+    <style>
+        body{
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+            background-image: url(a.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+        }
+        /* CSS styles for the button */
+        button {
+            background-color: #262c26; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>What Can JavaScript Do?</h2>
+    <p id="demo">JavaScript can change HTML content.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+</body>
+</html>
